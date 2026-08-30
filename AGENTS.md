@@ -121,7 +121,12 @@ npm run spellcheck
 
 <!-- SPECKIT START -->
 
-For additional context about technologies to be used, project structure,
-shell commands, and other important information, read the current plan
+当前 active feature：
+
+- `specs/002-spec-kit-demo-workbench/`
+
+如需了解技术栈、项目结构、验证命令和当前实现计划，请读取：
+
+- `specs/002-spec-kit-demo-workbench/plan.md`
 
 <!-- SPECKIT END -->
