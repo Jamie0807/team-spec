@@ -24,19 +24,21 @@
 
 **性能目标**：首屏内容在本地开发环境中即时可见；静态页面不依赖网络请求才能展示核心内容
 
-**约束**：不新增真实后端、真实鉴权、运行时 Markdown 解析或实时 AI 集成；不出现职业求职导向文案
+**约束**：不新增真实后端、真实鉴权、运行时 Markdown 解析或实时 AI 集成；不出现职业求职导向文案；后续项目文档默认使用中文；修改完成后不自动创建 git commit
 
 **规模/范围**：第一阶段展示 1 个已完成 feature、3 个工作台能力预览模块、6 个 Spec Kit 流程阶段和 README 证据地图
 
 ## 宪法检查
 
-*门禁：Phase 0 research 前必须通过；Phase 1 design 后重新检查。*
+_门禁：Phase 0 research 前必须通过；Phase 1 design 后重新检查。_
 
 - **Specification First**：通过。当前 feature 已创建 `specs/002-spec-kit-demo-workbench/spec.md`，实现前会生成 `plan.md` 和 `tasks.md`。
 - **User-Visible Value**：通过。规格按 4 个可独立测试的用户故事组织，覆盖首页理解、证据链、能力预览和 README。
 - **Frontend Stack Consistency**：通过。计划继续使用 React 19、TypeScript、Vite 和 Tailwind CSS，不新增依赖。
 - **Quality Gates**：通过。交付前运行 build、lint、format check、spellcheck 和视觉检查。
 - **Human Approval Gates**：通过。涉及 UI 改造，需在实现前完成 UI 设计并获得人工审批。
+- **Documentation Language**：通过。后续需求、计划、任务、设计、验证和交付说明默认使用中文，保留必要英文技术名词。
+- **Commit Approval**：通过。修改完成后不自动创建 git commit，除非用户明确要求并确认。
 
 ## 项目结构
 
@@ -95,6 +97,8 @@ src/
 - **Frontend Stack Consistency**：通过。未计划引入新依赖或替换项目技术栈。
 - **Quality Gates**：通过。验证命令与宪法一致。
 - **Human Approval Gates**：通过。实现前必须补充 UI 设计并等待人工确认。
+- **Documentation Language**：通过。后续文档默认中文的约束已进入规格和计划。
+- **Commit Approval**：通过。后续实现完成后仅报告状态和 diff，不自动提交。
 
 ## 复杂度跟踪
 

@@ -1,15 +1,84 @@
-# Team Spec
+# Team Spec Workbench
 
-基于 React 19、Vite、TypeScript 和 Tailwind CSS 的前端项目，并已接入
-GitHub Spec Kit 与 Codex Skills，用于按“规范先行”的方式开发功能。
+Team Spec Workbench 是一个基于 React 19、Vite、TypeScript 和 Tailwind CSS 的前端工程演示项目，用来展示如何通过 GitHub Spec Kit 按“规范先行”的方式交付功能。
 
-当前已实现功能：
+项目将应用页面和仓库文档结合起来：应用首页展示工作台形态、流程阶段、任务和知识沉淀；`specs/` 目录保留每个 feature 的规格、计划、任务和验证记录。
 
-- 用户登录表单
-- 邮箱和密码校验
-- 提交中状态
-- 模拟登录成功提示
-- 响应式登录页布局
+## 项目亮点
+
+- 使用 Spec Kit 管理 feature，从自然语言需求进入 `spec.md`、`plan.md` 和 `tasks.md`。
+- 每个功能都有独立 feature 目录，便于追踪需求、设计、任务和验证结果。
+- 应用首页展示 Spec Kit 流程、feature 证据链、任务阶段和知识笔记。
+- 保留 `001-login-form` 作为已完成的真实功能示例。
+- 项目约定后续文档默认使用中文，保留必要英文技术名词、命令和文件名。
+
+## Spec Kit 工作流
+
+本项目已通过 `specify init --integration codex` 初始化 GitHub Spec Kit。
+
+核心流程：
+
+```text
+Constitution -> Specify -> Plan -> Tasks -> Implement -> Verify
+```
+
+对应产物：
+
+```text
+.specify/memory/constitution.md
+specs/<feature>/spec.md
+specs/<feature>/plan.md
+specs/<feature>/tasks.md
+specs/<feature>/test-result.md
+```
+
+对应 Codex Skills：
+
+```text
+$speckit-constitution
+$speckit-specify
+$speckit-plan
+$speckit-tasks
+$speckit-implement
+```
+
+## 功能证据地图
+
+### 001-login-form
+
+已完成的登录表单示例，包含邮箱和密码校验、记住我、提交中状态和模拟成功反馈。
+
+- [spec.md](specs/001-login-form/spec.md)
+- [plan.md](specs/001-login-form/plan.md)
+- [tasks.md](specs/001-login-form/tasks.md)
+- [quickstart.md](specs/001-login-form/quickstart.md)
+- [test-result.md](specs/001-login-form/test-result.md)
+
+### 002-spec-kit-demo-workbench
+
+当前 active feature，将默认首页升级为 Spec Kit 演示工作台，并改写 README 的对外展示结构。
+
+- [spec.md](specs/002-spec-kit-demo-workbench/spec.md)
+- [plan.md](specs/002-spec-kit-demo-workbench/plan.md)
+- [tasks.md](specs/002-spec-kit-demo-workbench/tasks.md)
+- [research.md](specs/002-spec-kit-demo-workbench/research.md)
+- [data-model.md](specs/002-spec-kit-demo-workbench/data-model.md)
+- [ui-design.md](specs/002-spec-kit-demo-workbench/ui-design.md)
+- [quickstart.md](specs/002-spec-kit-demo-workbench/quickstart.md)
+- [test-result.md](specs/002-spec-kit-demo-workbench/test-result.md)
+- [contracts/ui-contract.md](specs/002-spec-kit-demo-workbench/contracts/ui-contract.md)
+
+## 应用页面
+
+当前首页是 `Team Spec Workbench` 单页工作台，包含：
+
+- 项目定位和 active feature 状态
+- Spec Kit 六阶段流程时间线
+- feature 证据卡片
+- Spec Browser 演示预览
+- Team Tasks 任务阶段看板
+- Knowledge Notes 知识笔记
+- `001-login-form` 登录表单交付结果
 
 ## 技术栈
 
@@ -22,7 +91,7 @@ GitHub Spec Kit 与 Codex Skills，用于按“规范先行”的方式开发功
 - cspell
 - GitHub Spec Kit
 
-## 快速开始
+## 本地运行
 
 安装依赖：
 
@@ -63,159 +132,25 @@ npm run spellcheck
 npm run format
 ```
 
-## Spec Kit 主流程
-
-本项目已通过 `specify init --integration codex` 初始化 GitHub Spec Kit。
-
-## 安装 Spec Kit
-
-如果新环境还没有 `uv` / `uvx`，先安装：
-
-```sh
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-
-安装后如果当前 shell 找不到 `uvx`，执行：
-
-```sh
-source "$HOME/.local/bin/env"
-```
-
-在项目根目录初始化 Spec Kit + Codex Skills：
-
-```sh
-uvx --from git+https://github.com/github/spec-kit.git specify init --here --force --integration codex
-```
-
-初始化完成后，会生成：
-
-```text
-.specify/
-.agents/skills/speckit-*
-```
-
-本项目已经完成上述初始化，通常不需要重复执行。
-
-## Spec Kit 主流程
-
-官方 Spec Kit 核心链路是：
-
-```text
-Constitution → Specify → Plan → Tasks → Implement
-```
-
-对应 Codex Skills：
-
-```text
-$speckit-constitution
-$speckit-specify
-$speckit-plan
-$speckit-tasks
-$speckit-implement
-```
-
-### 1. Constitution
-
-确立项目原则、技术约束、质量门禁和治理规则。
-
-主要产物：
-
-```text
-.specify/memory/constitution.md
-```
-
-### 2. Specify
-
-根据自然语言需求生成功能规格。
-
-主要产物：
-
-```text
-specs/<feature>/spec.md
-specs/<feature>/checklists/requirements.md
-.specify/feature.json
-```
-
-### 3. Plan
-
-基于 `spec.md` 生成实现计划和设计产物。
-
-常见产物：
-
-```text
-specs/<feature>/plan.md
-specs/<feature>/research.md
-specs/<feature>/data-model.md
-specs/<feature>/quickstart.md
-specs/<feature>/contracts/
-```
-
-### 4. Tasks
-
-基于 `spec.md` 和 `plan.md` 生成可执行任务清单。
-
-主要产物：
-
-```text
-specs/<feature>/tasks.md
-```
-
-### 5. Implement
-
-按 `tasks.md` 执行编码实现，并运行项目质量检查。
-
-## 当前 Feature
-
-登录表单 feature 位于：
-
-```text
-specs/001-login-form/
-```
-
-核心产物：
-
-- `spec.md`：用户故事、功能需求、成功标准和假设
-- `plan.md`：技术方案、项目结构和约束检查
-- `tasks.md`：按用户故事拆分的可执行任务
-- `quickstart.md`：手动验证和自动检查方式
-- `test-result.md`：最终验证结果
-
-## 项目结构
+## 仓库结构
 
 ```text
 .
-├── .agents/skills/           # Codex Skills，包含官方 speckit-* 和项目 team-spec-*
-├── .specify/                 # Spec Kit 配置、模板、脚本和治理规则
-├── specs/001-login-form/     # 登录表单 feature 规范与实现产物
-├── src/                      # React 应用源码
-├── AGENTS.md                 # Agent 协作说明
-├── package.json              # npm 脚本与依赖
+├── .agents/skills/                       # Codex Skills
+├── .specify/                             # Spec Kit 配置、模板、脚本和治理规则
+├── docs/superpowers/specs/               # 前期设计说明
+├── specs/001-login-form/                 # 登录表单 feature 产物
+├── specs/002-spec-kit-demo-workbench/    # 演示工作台 feature 产物
+├── src/                                  # React 应用源码
+├── AGENTS.md                             # Agent 协作说明
+├── package.json                          # npm 脚本与依赖
 └── README.md
 ```
 
-## 项目自定义 Skill
+## 项目约定
 
-除官方 `$speckit-*` Skills 外，本项目还沉淀了 9 阶段补充流程：
-
-```text
-$team-spec-delivery-orchestrator
-$team-spec-requirement-review
-$team-spec-requirement-breakdown
-$team-spec-solution-design
-$team-spec-ui-design
-$team-spec-test-case-generation
-$team-spec-implementation
-$team-spec-code-review-verification
-$team-spec-testing
-$team-spec-git-commit
-```
-
-这些 Skill 必须围绕官方 Spec Kit feature 目录工作，即读取或更新当前 feature 的
-`spec.md`、`plan.md` 和 `tasks.md`，不要另起一套替代主产物。
-
-## 开发约定
-
-- 新功能优先从 `$speckit-specify` 开始。
-- 涉及 UI 的功能，UI 设计必须人工确认后再编码。
-- 提交前必须通过 build、lint、format check 和 spellcheck。
-- 不提交 `node_modules` 和 `dist`。
+- 新需求优先从 `$speckit-specify` 开始。
+- 每个功能必须使用独立 Spec Kit feature 目录。
+- 涉及 UI 的功能，需要先产出 `ui-design.md` 并获得人工确认。
+- 后续需求、计划、任务、设计、验证和交付说明默认使用中文。
+- 修改完成后不自动创建 git commit；需要提交时先展示 diff、检查结果和提交信息，并等待确认。

@@ -6,6 +6,8 @@
 
 **Note**: This template is filled in by the `/speckit-plan` command. See `.specify/templates/plan-template.md` for the execution workflow.
 
+**Language**: Generated project documents MUST use Chinese by default. Keep necessary English technical terms, commands, file names, package names, and product names unchanged.
+
 ## Summary
 
 [Extract from feature spec: primary requirement + technical approach from research]

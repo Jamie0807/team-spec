@@ -1,5 +1,6 @@
 # [PROJECT_NAME] Constitution
 <!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- Project convention: generated project documents MUST use Chinese by default. Keep necessary English technical terms, commands, file names, package names, and product names unchanged. -->
 
 ## Core Principles
 

@@ -8,6 +8,8 @@
 
 **Input**: User description: "$ARGUMENTS"
 
+**Language**: Generated project documents MUST use Chinese by default. Keep necessary English technical terms, commands, file names, package names, and product names unchanged.
+
 ## User Scenarios & Testing *(mandatory)*
 
 <!--

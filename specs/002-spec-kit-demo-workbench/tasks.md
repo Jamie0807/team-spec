@@ -12,9 +12,10 @@
 
 **目的**：确认文档、约束和实现范围。
 
-- [ ] T001 确认 `specs/002-spec-kit-demo-workbench/spec.md`、`plan.md`、`research.md`、`data-model.md`、`contracts/ui-contract.md` 和 `quickstart.md` 已存在
-- [ ] T002 确认 `.specify/feature.json` 指向 `specs/002-spec-kit-demo-workbench`
-- [ ] T003 确认 `AGENTS.md` 的 Spec Kit 上下文指向 `specs/002-spec-kit-demo-workbench/plan.md`
+- [x] T001 确认 `specs/002-spec-kit-demo-workbench/spec.md`、`plan.md`、`research.md`、`data-model.md`、`contracts/ui-contract.md` 和 `quickstart.md` 已存在
+- [x] T002 确认 `.specify/feature.json` 指向 `specs/002-spec-kit-demo-workbench`
+- [x] T003 确认 `AGENTS.md` 的 Spec Kit 上下文指向 `specs/002-spec-kit-demo-workbench/plan.md`
+- [x] T004 确认 `AGENTS.md` 已记录后续项目文档默认使用中文、修改完成后不自动创建 git commit 的协作约定
 
 ---
 
@@ -24,10 +25,10 @@
 
 **关键门禁**：UI 设计必须先写入 `specs/002-spec-kit-demo-workbench/ui-design.md` 并获得人工确认，之后才能进入编码实现。
 
-- [ ] T004 在 `specs/002-spec-kit-demo-workbench/ui-design.md` 中定义工作台首页布局、视觉风格、模块层级和移动端表现，并等待人工审批
-- [ ] T005 [P] 在 `src/types/workbench.ts` 中定义 `Feature`、`SpecKitArtifact`、`WorkflowStage`、`QualityGate`、`KnowledgeNote` 和 `TaskColumn` 类型
-- [ ] T006 [P] 在 `src/data/workbench.ts` 中创建静态数据，覆盖流程阶段、feature 证据、质量门禁、任务阶段和知识笔记
-- [ ] T007 在 `src/data/workbench.ts` 中确保 `001-login-form` 的核心产物路径指向真实文件
+- [x] T005 在 `specs/002-spec-kit-demo-workbench/ui-design.md` 中定义工作台首页布局、视觉风格、模块层级和移动端表现，并等待人工审批
+- [x] T006 [P] 在 `src/types/workbench.ts` 中定义 `Feature`、`SpecKitArtifact`、`WorkflowStage`、`QualityGate`、`KnowledgeNote` 和 `TaskColumn` 类型
+- [x] T007 [P] 在 `src/data/workbench.ts` 中创建静态数据，覆盖流程阶段、feature 证据、质量门禁、任务阶段和知识笔记
+- [x] T008 在 `src/data/workbench.ts` 中确保 `001-login-form` 的核心产物路径指向真实文件
 
 ---
 
@@ -39,10 +40,10 @@
 
 ### 用户故事 1 实现
 
-- [ ] T008 [P] [US1] 在 `src/components/MetricsStrip.tsx` 中实现摘要指标展示组件
-- [ ] T009 [P] [US1] 在 `src/components/ProcessTimeline.tsx` 中实现 6 阶段 Spec Kit 流程时间线
-- [ ] T010 [US1] 在 `src/App.tsx` 中实现工作台首页顶部说明区，并接入 `MetricsStrip` 与 `ProcessTimeline`
-- [ ] T011 [US1] 在 `src/App.tsx` 中替换单一登录页首屏，使默认体验表达 `Team Spec Workbench`
+- [x] T009 [P] [US1] 在 `src/components/MetricsStrip.tsx` 中实现摘要指标展示组件
+- [x] T010 [P] [US1] 在 `src/components/ProcessTimeline.tsx` 中实现 6 阶段 Spec Kit 流程时间线
+- [x] T011 [US1] 在 `src/App.tsx` 中实现工作台首页顶部说明区，并接入 `MetricsStrip` 与 `ProcessTimeline`
+- [x] T012 [US1] 在 `src/App.tsx` 中替换单一登录页首屏，使默认体验表达 `Team Spec Workbench`
 
 **检查点**：US1 完成后，首页应能独立展示项目定位和 Spec Kit 流程，不依赖其它用户故事。
 
@@ -56,10 +57,10 @@
 
 ### 用户故事 2 实现
 
-- [ ] T012 [P] [US2] 在 `src/components/EvidenceCard.tsx` 中实现 feature 证据卡片组件
-- [ ] T013 [P] [US2] 在 `src/components/SpecBrowser.tsx` 中实现 feature 产物状态列表
-- [ ] T014 [US2] 在 `src/App.tsx` 中接入 `EvidenceCard` 和 `SpecBrowser`
-- [ ] T015 [US2] 在 `README.md` 中新增功能证据地图，并链接到 `specs/001-login-form/` 和 `specs/002-spec-kit-demo-workbench/` 的核心产物
+- [x] T013 [P] [US2] 在 `src/components/EvidenceCard.tsx` 中实现 feature 证据卡片组件
+- [x] T014 [P] [US2] 在 `src/components/SpecBrowser.tsx` 中实现 feature 产物状态列表
+- [x] T015 [US2] 在 `src/App.tsx` 中接入 `EvidenceCard` 和 `SpecBrowser`
+- [x] T016 [US2] 在 `README.md` 中新增功能证据地图，并链接到 `specs/001-login-form/` 和 `specs/002-spec-kit-demo-workbench/` 的核心产物
 
 **检查点**：US2 完成后，页面和 README 都应能说明 feature 与 Spec Kit 产物之间的关系。
 
@@ -73,10 +74,10 @@
 
 ### 用户故事 3 实现
 
-- [ ] T016 [P] [US3] 在 `src/components/TeamTasks.tsx` 中实现任务阶段看板
-- [ ] T017 [P] [US3] 在 `src/components/KnowledgeNotes.tsx` 中实现知识笔记模块
-- [ ] T018 [US3] 在 `src/App.tsx` 中接入 `TeamTasks` 和 `KnowledgeNotes`
-- [ ] T019 [US3] 在 `src/App.tsx` 中明确将未完成能力标记为演示预览或规划中
+- [x] T017 [P] [US3] 在 `src/components/TeamTasks.tsx` 中实现任务阶段看板
+- [x] T018 [P] [US3] 在 `src/components/KnowledgeNotes.tsx` 中实现知识笔记模块
+- [x] T019 [US3] 在 `src/App.tsx` 中接入 `TeamTasks` 和 `KnowledgeNotes`
+- [x] T020 [US3] 在 `src/App.tsx` 中明确将未完成能力标记为演示预览或规划中
 
 **检查点**：US3 完成后，工作台应具备真实业务小应用的产品形态，但不暗示未完成能力已经上线。
 
@@ -90,10 +91,10 @@
 
 ### 用户故事 4 实现
 
-- [ ] T020 [US4] 在 `README.md` 中重写项目概览和项目亮点
-- [ ] T021 [US4] 在 `README.md` 中补充 Spec Kit 工作流说明和当前 feature 目录结构
-- [ ] T022 [US4] 在 `README.md` 中补充本地运行、构建、预览和质量检查命令
-- [ ] T023 [US4] 在 `README.md` 中确保所有仓库内链接指向真实文件
+- [x] T021 [US4] 在 `README.md` 中重写项目概览和项目亮点
+- [x] T022 [US4] 在 `README.md` 中补充 Spec Kit 工作流说明和当前 feature 目录结构
+- [x] T023 [US4] 在 `README.md` 中补充本地运行、构建、预览和质量检查命令
+- [x] T024 [US4] 在 `README.md` 中确保所有仓库内链接指向真实文件
 
 **检查点**：US4 完成后，不运行应用也能通过 README 理解项目用途和证据链。
 
@@ -103,13 +104,14 @@
 
 **目的**：验证质量门禁、视觉可用性和文案约束。
 
-- [ ] T024 在 `src/App.tsx` 和 `src/components/*.tsx` 中检查响应式布局，确保桌面与移动端没有文本重叠、内容溢出或不可读模块
-- [ ] T025 在 `README.md`、`src/App.tsx`、`src/components/*.tsx` 和 `specs/002-spec-kit-demo-workbench/` 中搜索并移除职业求职导向文案
-- [ ] T026 运行 `npm run build`
-- [ ] T027 运行 `npm run lint`
-- [ ] T028 运行 `npm run format:check`
-- [ ] T029 运行 `npm run spellcheck`
-- [ ] T030 按 `specs/002-spec-kit-demo-workbench/quickstart.md` 完成手动验证，并将结果记录到 `specs/002-spec-kit-demo-workbench/test-result.md`
+- [ ] T025 在 `src/App.tsx` 和 `src/components/*.tsx` 中检查响应式布局，确保桌面与移动端没有文本重叠、内容溢出或不可读模块
+- [x] T026 在 `README.md`、`src/App.tsx`、`src/components/*.tsx` 和 `specs/002-spec-kit-demo-workbench/` 中搜索并移除职业求职导向文案
+- [x] T027 检查新增和修改的项目文档默认使用中文，必要的英文技术名词、命令和文件名除外
+- [x] T028 运行 `npm run build`
+- [x] T029 运行 `npm run lint`
+- [x] T030 运行 `npm run format:check`
+- [x] T031 运行 `npm run spellcheck`
+- [ ] T032 按 `specs/002-spec-kit-demo-workbench/quickstart.md` 完成手动验证，并将结果记录到 `specs/002-spec-kit-demo-workbench/test-result.md`
 
 ## 依赖与执行顺序
 
@@ -121,11 +123,11 @@
 
 ## 并行机会
 
-- T005 和 T006 可以并行，但 T007 依赖 T006。
-- T008 和 T009 可以并行。
-- T012 和 T013 可以并行。
-- T016 和 T017 可以并行。
-- README 相关任务 T020、T021、T022 可以在页面组件实现后并行整理，但 T023 需要最后统一校验链接。
+- T006 和 T007 可以并行，但 T008 依赖 T007。
+- T009 和 T010 可以并行。
+- T013 和 T014 可以并行。
+- T017 和 T018 可以并行。
+- README 相关任务 T021、T022、T023 可以在页面组件实现后并行整理，但 T024 需要最后统一校验链接。
 
 ## 实现策略
 

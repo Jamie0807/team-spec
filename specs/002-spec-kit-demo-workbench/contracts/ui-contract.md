@@ -36,6 +36,15 @@
 
 `002-spec-kit-demo-workbench` 在实现完成前可以展示为进行中，但不得暗示已完成验证。
 
+Spec Kit 流程时间线必须区分项目级产物和当前 feature 产物：
+
+- `Constitution` 的证据入口必须标注为项目级原则文档，不得表达为 `002-spec-kit-demo-workbench` 的需求文档。
+- `Specify` 的证据入口必须标注为 `002` 需求规格文档，并指向 `specs/002-spec-kit-demo-workbench/spec.md`。
+- `Plan`、`Tasks` 和 `Verify` 必须标注为 `002` 对应阶段产物。
+- `.md` 证据路径必须可以在应用内点击查看，不能依赖直接打开仓库根目录文件路径。
+- 应用内文档查看必须展示 UTF-8 Markdown 阅读视图，避免浏览器路由、静态资源策略或原文符号暴露导致阅读困难。
+- 非 Markdown 目录路径只展示为证据位置。
+
 ## 响应式合约
 
 - 移动端宽度下，主要区域必须单列展示。
