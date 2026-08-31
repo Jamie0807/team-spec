@@ -53,6 +53,24 @@ $speckit-tasks
 $speckit-implement
 ```
 
+## 团队复用 Skills
+
+本项目在官方 Spec Kit 流程基础上，沉淀了一组可复用的 `team-spec-*` Skills，
+用于把团队研发经验固化为可执行的协作步骤。
+
+这些 Skills 覆盖：
+
+- 需求入口：`$team-spec-requirement-review`、`$team-spec-requirement-breakdown`
+- 方案设计：`$team-spec-solution-design`、`$team-spec-ui-design`
+- 测试准备：`$team-spec-test-case-generation`
+- 编码执行：`$team-spec-implementation`
+- 质量门禁：`$team-spec-code-review-verification`、`$team-spec-testing`
+- 提交治理：`$team-spec-git-commit`
+- 流程调度：`$team-spec-delivery-orchestrator`
+
+`team-spec-*` Skills 不替代官方 Spec Kit 产物，而是在 `spec.md`、`plan.md`
+和 `tasks.md` 之上补充需求评审、方案调研、UI 审批、测试校验和质量门禁。
+
 ## 功能证据地图
 
 ### 001-login-form
