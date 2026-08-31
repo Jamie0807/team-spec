@@ -76,13 +76,21 @@ npm run spellcheck
 
 ## Skill 工作流
 
-新需求或完整功能交付默认优先使用官方 Spec Kit Skill：
+新需求或完整功能交付默认使用官方 Spec Kit 与本项目 `team-spec-*` 门禁合并后的流程：
 
-1. `$speckit-constitution`：确立项目原则。
-2. `$speckit-specify`：创建基线需求规范。
-3. `$speckit-plan`：创建实现计划。
-4. `$speckit-tasks`：生成可执行任务。
-5. `$speckit-implement`：执行实现。
+1. `$speckit-constitution`：制定项目原则。
+2. `$team-spec-requirement-review`：需求评审。
+3. `$speckit-specify`：创建需求规格。
+4. `$team-spec-requirement-breakdown`：需求拆解。
+5. `$speckit-plan`：创建实现计划。
+6. `$team-spec-solution-design`：方案设计。
+7. `$team-spec-ui-design`：UI 设计，并等待人工确认。
+8. `$team-spec-test-case-generation`：生成测试用例。
+9. `$speckit-tasks`：生成任务清单。
+10. `$speckit-implement` / `$team-spec-implementation`：编码实现。
+11. `$team-spec-code-review-verification`：代码审查验证。
+12. `$team-spec-testing`：运行质量检查。
+13. `$team-spec-git-commit`：验证记录与提交确认。
 
 每个功能必须使用 Spec Kit feature 目录，例如 `specs/001-login-form/`，并至少包含：
 
@@ -90,19 +98,8 @@ npm run spellcheck
 - `plan.md`
 - `tasks.md`
 
-如需本项目自定义的 9 阶段门禁流程，再从 `$team-spec-delivery-orchestrator` 开始。
-
-该调度 Skill 会按顺序调用以下独立 Skill：
-
-1. `$team-spec-requirement-review`：需求评审。
-2. `$team-spec-requirement-breakdown`：需求拆解。
-3. `$team-spec-solution-design`：方案调研设计。
-4. `$team-spec-ui-design`：UI 设计，并等待人工审批。
-5. `$team-spec-test-case-generation`：测试用例生成。
-6. `$team-spec-implementation`：编码实现。
-7. `$team-spec-code-review-verification`：代码审查验证。
-8. `$team-spec-testing`：测试和检查。
-9. `$team-spec-git-commit`：人工确认后提交。
+`$team-spec-delivery-orchestrator` 可作为合并流程的总调度入口，但不得跳过官方
+Spec Kit 主产物。
 
 单阶段返工时，可以直接调用对应 `$team-spec-*` Skill，但必须读取并更新当前 feature
 目录中的 `spec.md`、`plan.md` 或 `tasks.md`，不要创建替代主产物。

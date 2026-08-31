@@ -1,23 +1,15 @@
 <!--
 同步影响报告
-版本变更：1.0.0 -> 1.1.0
-修改原则：
-- Specification First -> 规格先行
-- User-Visible Value -> 用户可见价值
-- Frontend Stack Consistency -> 前端技术栈一致性
-- Quality Gates -> 质量门禁
-- Human Approval Gates -> 人工审批门禁
-新增原则：
-- 中文文档
-- 提交审批
+版本变更：1.1.0 -> 1.2.0
+修改原则：无
+新增原则：无
+修改治理流程：
+- 后续新需求默认执行官方 Spec Kit 与本项目 `team-spec-*` 门禁合并后的 13 步流程
 新增章节：无
 移除章节：无
 模板同步：
-- 已更新 .specify/templates/plan-template.md
-- 已更新 .specify/templates/spec-template.md
-- 已更新 .specify/templates/tasks-template.md
-- 已更新 .specify/templates/checklist-template.md
-- 已更新 .specify/templates/constitution-template.md
+- 已更新 AGENTS.md
+- 已更新 README.md
 - 不适用 .specify/templates/commands/，当前仓库不存在该目录
 后续事项：无
 -->
@@ -95,20 +87,28 @@ npm run spellcheck
 
 ## Development Workflow
 
-新 feature 默认使用官方 Spec Kit Skills：
+新 feature 默认使用官方 Spec Kit 与本项目 `team-spec-*` 门禁合并后的交付流程：
 
-1. `$speckit-constitution`
-2. `$speckit-specify`
-3. `$speckit-plan`
-4. `$speckit-tasks`
-5. `$speckit-implement`
+1. `$speckit-constitution`：制定项目原则。
+2. `$team-spec-requirement-review`：需求评审。
+3. `$speckit-specify`：创建需求规格。
+4. `$team-spec-requirement-breakdown`：需求拆解。
+5. `$speckit-plan`：创建实现计划。
+6. `$team-spec-solution-design`：方案设计。
+7. `$team-spec-ui-design`：UI 设计，并等待人工确认。
+8. `$team-spec-test-case-generation`：生成测试用例。
+9. `$speckit-tasks`：生成任务清单。
+10. `$speckit-implement` / `$team-spec-implementation`：编码实现。
+11. `$team-spec-code-review-verification`：代码审查验证。
+12. `$team-spec-testing`：运行质量检查。
+13. `$team-spec-git-commit`：验证记录与提交确认。
 
 每个 feature 的主产物必须写入 `specs/[编号-feature-name]/`，并保持 `spec.md`、`plan.md`
 和 `tasks.md` 为当前事实来源。
 
-项目自定义的 `team-spec-*` Skills 可以补充官方流程，但必须读取并更新当前 feature 目录中的
-官方产物，不得创建替代主产物。单阶段返工时，可以直接使用对应阶段 Skill，但仍要遵守
-规格先行、中文文档、人工审批和质量门禁。
+`$team-spec-delivery-orchestrator` 可作为合并流程的总调度入口，但必须保留官方 Spec Kit
+主产物。单阶段返工时，可以直接使用对应阶段 Skill，但仍要遵守规格先行、中文文档、
+人工审批、质量门禁和提交审批。
 
 ## Governance
 
@@ -125,4 +125,4 @@ npm run spellcheck
   - MINOR：新增原则、章节或实质扩展治理要求。
   - PATCH：措辞澄清、翻译、错别字或不改变治理含义的修正。
 
-**Version**: 1.1.0 | **Ratified**: 2026-06-09 | **Last Amended**: 2026-08-30
+**Version**: 1.2.0 | **Ratified**: 2026-06-09 | **Last Amended**: 2026-08-31

@@ -8,19 +8,30 @@ Team Spec Workbench 是一个基于 React 19、Vite、TypeScript 和 Tailwind CS
 
 - 使用 Spec Kit 管理 feature，从自然语言需求进入 `spec.md`、`plan.md` 和 `tasks.md`。
 - 每个功能都有独立 feature 目录，便于追踪需求、设计、任务和验证结果。
-- 应用首页展示 Spec Kit 流程、feature 证据链、任务阶段和知识笔记。
+- 应用首页展示 Spec Kit 流程、feature 证据链、任务阶段、知识笔记和质量门禁状态。
+- 页面内置 Markdown 阅读视图，可直接查看核心 Spec Kit 产物内容。
 - 保留 `001-login-form` 作为已完成的真实功能示例。
-- 项目约定后续文档默认使用中文，保留必要英文技术名词、命令和文件名。
+- 项目 Constitution 和后续文档默认使用中文，保留必要英文技术名词、命令和文件名。
 
 ## Spec Kit 工作流
 
 本项目已通过 `specify init --integration codex` 初始化 GitHub Spec Kit。
 
-核心流程：
+合并后的交付流程：
 
-```text
-Constitution -> Specify -> Plan -> Tasks -> Implement -> Verify
-```
+1. 制定项目原则：`$speckit-constitution`
+2. 需求评审：`$team-spec-requirement-review`
+3. 创建需求规格：`$speckit-specify`
+4. 需求拆解：`$team-spec-requirement-breakdown`
+5. 创建实现计划：`$speckit-plan`
+6. 方案设计：`$team-spec-solution-design`
+7. UI 设计与人工确认：`$team-spec-ui-design`
+8. 生成测试用例：`$team-spec-test-case-generation`
+9. 生成任务清单：`$speckit-tasks`
+10. 编码实现：`$speckit-implement` / `$team-spec-implementation`
+11. 代码审查验证：`$team-spec-code-review-verification`
+12. 运行质量检查：`$team-spec-testing`
+13. 验证记录与提交确认：`$team-spec-git-commit`
 
 对应产物：
 
@@ -32,7 +43,7 @@ specs/<feature>/tasks.md
 specs/<feature>/test-result.md
 ```
 
-对应 Codex Skills：
+核心官方 Spec Kit Skills：
 
 ```text
 $speckit-constitution
@@ -56,7 +67,7 @@ $speckit-implement
 
 ### 002-spec-kit-demo-workbench
 
-当前 active feature，将默认首页升级为 Spec Kit 演示工作台，并改写 README 的对外展示结构。
+已完成的演示工作台 feature，将默认首页升级为 Spec Kit 流程展示界面，并改写 README 的对外展示结构。
 
 - [spec.md](specs/002-spec-kit-demo-workbench/spec.md)
 - [plan.md](specs/002-spec-kit-demo-workbench/plan.md)
@@ -72,12 +83,14 @@ $speckit-implement
 
 当前首页是 `Team Spec Workbench` 单页工作台，包含：
 
-- 项目定位和 active feature 状态
-- Spec Kit 六阶段流程时间线
+- 项目定位和 feature 交付状态
+- Spec Kit 六阶段流程时间线：原则、需求、计划、任务、实现、验证
 - feature 证据卡片
+- 应用内 Markdown 阅读视图
 - Spec Browser 演示预览
 - Team Tasks 任务阶段看板
 - Knowledge Notes 知识笔记
+- 5/5 质量门禁状态
 - `001-login-form` 登录表单交付结果
 
 ## 技术栈
