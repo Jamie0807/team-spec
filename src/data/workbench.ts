@@ -25,14 +25,15 @@ export const metrics: Metric[] = [
   },
   {
     label: '质量门禁',
-    value: '4/5',
-    description: '命令检查已通过，视觉检查待人工确认',
+    value: '5/5',
+    description: '命令检查和 UI 人工确认均已通过',
   },
 ];
 
 export const workflowStages: WorkflowStage[] = [
   {
     name: 'Constitution',
+    title: '原则',
     order: 1,
     purpose: '确立项目原则、技术约束和质量门禁。',
     evidence: '.specify/memory/constitution.md',
@@ -41,6 +42,7 @@ export const workflowStages: WorkflowStage[] = [
   },
   {
     name: 'Specify',
+    title: '需求',
     order: 2,
     purpose: '把自然语言需求转成可验证的用户故事和功能需求。',
     evidence: 'specs/002-spec-kit-demo-workbench/spec.md',
@@ -49,6 +51,7 @@ export const workflowStages: WorkflowStage[] = [
   },
   {
     name: 'Plan',
+    title: '计划',
     order: 3,
     purpose: '明确技术上下文、结构决策和设计产物。',
     evidence: 'specs/002-spec-kit-demo-workbench/plan.md',
@@ -57,6 +60,7 @@ export const workflowStages: WorkflowStage[] = [
   },
   {
     name: 'Tasks',
+    title: '任务',
     order: 4,
     purpose: '按用户故事生成可执行、可追踪的任务清单。',
     evidence: 'specs/002-spec-kit-demo-workbench/tasks.md',
@@ -65,19 +69,26 @@ export const workflowStages: WorkflowStage[] = [
   },
   {
     name: 'Implement',
+    title: '实现',
     order: 5,
     purpose: '根据已批准的设计和任务完成前端实现。',
-    evidence: 'src/',
-    evidenceLabel: '页面源码目录',
+    evidence: [
+      'src/App.tsx',
+      'src/components/',
+      'src/data/workbench.ts',
+      'src/types/workbench.ts',
+    ],
+    evidenceLabel: '002 实现产物',
     status: 'passed',
   },
   {
     name: 'Verify',
+    title: '验证',
     order: 6,
     purpose: '运行质量检查并记录手动验证结果。',
     evidence: 'specs/002-spec-kit-demo-workbench/test-result.md',
     evidenceLabel: '002 验证记录',
-    status: 'pending',
+    status: 'passed',
   },
 ];
 
@@ -145,8 +156,8 @@ export const features: Feature[] = [
       {
         label: 'test-result.md',
         path: 'specs/002-spec-kit-demo-workbench/test-result.md',
-        status: 'draft',
-        description: '命令检查已通过，手动场景待确认',
+        status: 'ready',
+        description: '命令检查和 UI 人工确认记录',
       },
     ],
   },
@@ -180,8 +191,8 @@ export const qualityGates: QualityGate[] = [
   {
     name: '视觉检查',
     command: 'quickstart 手动场景',
-    status: 'pending',
-    scope: '桌面和移动端布局待人工确认',
+    status: 'passed',
+    scope: '桌面和移动端布局已人工确认',
   },
 ];
 
@@ -235,17 +246,17 @@ export const taskColumns: TaskColumn[] = [
       {
         title: '首页定位与流程',
         status: 'done',
-        verification: 'pending',
+        verification: 'passed',
       },
       {
         title: '功能证据链',
         status: 'done',
-        verification: 'pending',
+        verification: 'passed',
       },
       {
         title: '能力预览',
         status: 'done',
-        verification: 'pending',
+        verification: 'passed',
       },
       {
         title: 'README 展示',
@@ -260,8 +271,8 @@ export const taskColumns: TaskColumn[] = [
     tasks: [
       {
         title: '响应式检查',
-        status: 'active',
-        verification: 'pending',
+        status: 'done',
+        verification: 'passed',
       },
       {
         title: '文案检查',
@@ -276,7 +287,7 @@ export const taskColumns: TaskColumn[] = [
       {
         title: '记录验证结果',
         status: 'done',
-        verification: 'pending',
+        verification: 'passed',
       },
     ],
   },

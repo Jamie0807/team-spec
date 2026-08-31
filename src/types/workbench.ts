@@ -29,9 +29,10 @@ export type Feature = {
 
 export type WorkflowStage = {
   name: string;
+  title: string;
   order: number;
   purpose: string;
-  evidence: string;
+  evidence: string | string[];
   evidenceLabel: string;
   status: GateStatus;
 };

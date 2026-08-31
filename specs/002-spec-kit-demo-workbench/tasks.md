@@ -104,14 +104,14 @@
 
 **目的**：验证质量门禁、视觉可用性和文案约束。
 
-- [ ] T025 在 `src/App.tsx` 和 `src/components/*.tsx` 中检查响应式布局，确保桌面与移动端没有文本重叠、内容溢出或不可读模块
+- [x] T025 在 `src/App.tsx` 和 `src/components/*.tsx` 中检查响应式布局，确保桌面与移动端没有文本重叠、内容溢出或不可读模块
 - [x] T026 在 `README.md`、`src/App.tsx`、`src/components/*.tsx` 和 `specs/002-spec-kit-demo-workbench/` 中搜索并移除职业求职导向文案
 - [x] T027 检查新增和修改的项目文档默认使用中文，必要的英文技术名词、命令和文件名除外
 - [x] T028 运行 `npm run build`
 - [x] T029 运行 `npm run lint`
 - [x] T030 运行 `npm run format:check`
 - [x] T031 运行 `npm run spellcheck`
-- [ ] T032 按 `specs/002-spec-kit-demo-workbench/quickstart.md` 完成手动验证，并将结果记录到 `specs/002-spec-kit-demo-workbench/test-result.md`
+- [x] T032 按 `specs/002-spec-kit-demo-workbench/quickstart.md` 完成手动验证，并将结果记录到 `specs/002-spec-kit-demo-workbench/test-result.md`
 
 ## 依赖与执行顺序
 

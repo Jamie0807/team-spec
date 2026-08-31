@@ -19,6 +19,9 @@ type ProcessTimelineProps = {
 
 const isDocumentPath = (path: string) => path.endsWith('.md');
 
+const getEvidencePaths = (evidence: WorkflowStage['evidence']) =>
+  Array.isArray(evidence) ? evidence : [evidence];
+
 export function ProcessTimeline({
   onOpenDocument,
   stages,
@@ -39,7 +42,7 @@ export function ProcessTimeline({
 
       <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-6">
         {stages.map((stage) => {
-          const canOpenDocument = isDocumentPath(stage.evidence);
+          const evidencePaths = getEvidencePaths(stage.evidence);
 
           return (
             <article
@@ -56,28 +59,39 @@ export function ProcessTimeline({
                   {statusLabels[stage.status]}
                 </span>
               </div>
-              <h3 className="mt-4 text-base font-semibold text-slate-950">
-                {stage.name}
+              <h3 className="mt-4 text-xl font-semibold text-slate-950">
+                {stage.title}
               </h3>
+              <p className="mt-1 font-mono text-xs font-semibold uppercase tracking-normal text-slate-400">
+                {stage.name}
+              </p>
               <p className="mt-2 text-sm leading-6 text-slate-600">
                 {stage.purpose}
               </p>
               <p className="mt-3 text-xs font-semibold text-slate-500">
                 {stage.evidenceLabel}
               </p>
-              {canOpenDocument ? (
-                <button
-                  className="mt-1 block w-full min-w-0 overflow-hidden break-all rounded-md bg-slate-50 px-2 py-1.5 text-left text-xs font-medium text-cyan-700 transition hover:bg-cyan-50 hover:text-cyan-900 focus:outline-none focus:ring-2 focus:ring-cyan-200"
-                  onClick={() => onOpenDocument(stage.evidence)}
-                  type="button"
-                >
-                  {stage.evidence}
-                </button>
-              ) : (
-                <p className="mt-1 w-full min-w-0 overflow-hidden break-all rounded-md bg-slate-50 px-2 py-1.5 text-xs text-slate-500">
-                  {stage.evidence}
-                </p>
-              )}
+              <div className="mt-1 grid gap-1.5">
+                {evidencePaths.map((path) =>
+                  isDocumentPath(path) ? (
+                    <button
+                      className="block w-full min-w-0 overflow-hidden break-all rounded-md bg-slate-50 px-2 py-1.5 text-left text-xs font-medium text-cyan-700 transition hover:bg-cyan-50 hover:text-cyan-900 focus:outline-none focus:ring-2 focus:ring-cyan-200"
+                      key={path}
+                      onClick={() => onOpenDocument(path)}
+                      type="button"
+                    >
+                      {path}
+                    </button>
+                  ) : (
+                    <p
+                      className="w-full min-w-0 overflow-hidden break-all rounded-md bg-slate-50 px-2 py-1.5 text-xs text-slate-500"
+                      key={path}
+                    >
+                      {path}
+                    </p>
+                  ),
+                )}
+              </div>
             </article>
           );
         })}
